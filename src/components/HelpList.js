@@ -37,6 +37,7 @@ const commandList = [
 const HelpList = ({ reference, className }) => {
   const [device, setDevice] = useState();
 
+  //   on load, confirm if user device is mac, or other
   useEffect(() => {
     let mac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
     if (mac) {
@@ -46,6 +47,7 @@ const HelpList = ({ reference, className }) => {
     }
   }, []);
 
+  //   helper function to identify last item of list (will be used to remove its bottom bordr)
   const lastItem = (idx) => {
     if (idx === commandList.length - 1) {
       return true;
